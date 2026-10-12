@@ -19,6 +19,30 @@ func TestGradeTypeString(t *testing.T) {
 	}
 }
 
+func TestGetPassFailGrade(t *testing.T) {
+	tests := []struct {
+		name  string
+		grade int
+		want  string
+	}{
+		{name: "passing boundary", grade: 70, want: "Pass"},
+		{name: "below passing boundary", grade: 69, want: "Fail"},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			gradeCalculator := NewGradeCalculator(true)
+			gradeCalculator.AddGrade("assignment", test.grade, Assignment)
+			gradeCalculator.AddGrade("exam", test.grade, Exam)
+			gradeCalculator.AddGrade("essay", test.grade, Essay)
+
+			if got := gradeCalculator.GetFinalGrade(); got != test.want {
+				t.Errorf("GetFinalGrade() = %q, want %q", got, test.want)
+			}
+		})
+	}
+}
+
 func TestGetGradeA(t *testing.T) {
 	expected_value := "A"
 
