@@ -1,33 +1,34 @@
 # ESEP Grade Calculator
 
-Overview
+## Overview
 
-Calculates weighted student grades using assignments, exams, and essay categories.
+Calculates weighted student grades using assignments, exams, and essays.
 
-Weights
+## Weights
 
-Assignments: 50%
-Exams: 35%
-Essays: 15%
+- Assignments: 50%
+- Exams: 35%
+- Essays: 15%
 
-Grade Scale
+## Grade Scale
 
-A >= 90
-B >= 80
-C >= 70
-D >= 60
-F < 60
+- A >= 90
+- B >= 80
+- C >= 70
+- D >= 60
+- F < 60
 
-Runtime requirements: Golang 1.24+
+## Runtime requirements:
+Golang 1.24+
 
-Running Tests
+## Running Tests
 
 ```
 cd grade_calculator/
 go test ./...
 ```
 
-Running Coverage
+## Running Coverage
 
 ```
 cd grade_calculator/
